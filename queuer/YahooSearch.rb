@@ -233,6 +233,7 @@ class YahooSearchTest < Test::Unit::TestCase
 		end_with_ppt = true
 		actual_http_requests.scan(/<httpRequest>.*?<\/httpRequest>/) { |http_request|
 			is_ppt = http_request.index("ppt</httpRequest")
+			is_ppt = http_request.index("pps</httpRequest") if is_ppt==nil
 			if(is_ppt==nil)
 				puts http_request.to_s
 				end_with_ppt = false

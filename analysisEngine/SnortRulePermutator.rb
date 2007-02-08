@@ -31,7 +31,7 @@ class SnortRulePermutator
 		#rules to unmanagable levels.
 		case_insensitive_rules = Array.new
 		rules.each {|rule|
-			STDERR.puts "case insensitize:"+rule.sid.to_s
+			#STDERR.puts "case insensitize:"+rule.sid.to_s
 			case_insensitive_content = 0
 			rule.contents.each { | content |
 				case_insensitive_content = case_insensitive_content + 1 if(content.nocase)
@@ -195,7 +195,7 @@ class SnortRulePermutator
 	def encode_rules(rules, start_sid, encoding_type)
 		encoded_rules = Array.new
 		rules.each { |rule|
-			STDERR.puts "encode:"+rule.sid.to_s
+			#STDERR.puts "encode:"+rule.sid.to_s
 			permutable_content = 0
 			rule.contents.each { | content |
 				permutable_content = permutable_content + 1 if(content.permutable?)
