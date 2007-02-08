@@ -1,0 +1,4 @@
+<snortRulesAnalysisEngineConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="SnortRulesAnalysisEngineConfiguration_v1_0.xsd">
+	<rulesLocation>analysisEngine/unittest2.rules</rulesLocation>
+</snortRulesAnalysisEngineConfiguration>      

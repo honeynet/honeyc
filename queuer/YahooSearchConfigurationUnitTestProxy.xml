@@ -1,0 +1,10 @@
+<yahooSearchConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="YahooSearchConfiguration_v1_0.xsd"
+ applicationID="_HoneyC_">
+ 	<proxy>
+		<server>192.168.74.3</server>
+		<port>3128</port>
+	</proxy>
+	<query results="1">mail.yahoo.com</query>
+	<query results="1">www.google.com</query>
+</yahooSearchConfiguration>

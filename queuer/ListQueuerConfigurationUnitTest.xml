@@ -1,0 +1,5 @@
+<listQueuerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ListQueuerConfiguration_v1_0.xsd">
+	<uri>http://www.unit.com</uri>
+	<uri>http://www.unittest.com/index.html?sometest=one&amp;otherparam=one and two</uri>
+	<uri>http://www.unittest.com/index.html?sometest=one&amp;otherparam=three%20and%20two</uri>
+</listQueuerConfiguration>

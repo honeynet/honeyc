@@ -1,0 +1,1 @@
+alert tcp !$HOME_NET !80:443 -> $EXTERNAL_NET $HTTP_PORTS (msg: "rule1 msg"; sid: 1000001; rev:4; classtype:trojan-activity; priority:10; content:"test"; nocase; content:"testThis"; nocase; )

@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="yahooSearchConfiguration" type="yahooSearchConfiguration"/>
+    <xs:complexType name="yahooSearchConfiguration">
+	<xs:sequence>
+		<xs:element name="query" maxOccurs="unbounded">
+			<xs:complexType>
+			      	<xs:simpleContent>
+					<xs:extension base = "xs:string">
+				       		<xs:attribute name = "results" use = "required" type = "results"/>
+				       		<xs:attribute name = "format" use = "optional" type = "xs:string"/> <!-- defaults to all -->
+				       	</xs:extension>
+		    		</xs:simpleContent>
+	     		</xs:complexType>
+	   	</xs:element>
+	</xs:sequence>
+    	<xs:attribute name = "applicationID" use = "required" type = "xs:string"/>
+    </xs:complexType>
+    <xs:simpleType name="results">
+	<xs:restriction base="xs:nonNegativeInteger">
+		<xs:maxInclusive value="1000"></xs:maxInclusive> <!-- restriction by Yahoo Search API-->
+	</xs:restriction>	
+    </xs:simpleType>
+</xs:schema>

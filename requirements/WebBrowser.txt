@@ -1,0 +1,8 @@
+1.1.3
+Web Browser should allow to follow the links (1 depth, not recursive) on the web pages it visits that come from the queuer.
+
+1.1
+Web Browser should be enhanced to allow configuration of a proxy (with or without authentication) to interact with a server.
+
+1.0
+Web Browser, a visitor component within HoneyC, should allow to retrieve http web pages from web servers. The input of the web browser should consume xml representation of httpRequests and the output should consist of xml representation of httpResponses. Web browser should not react to retrieve referenced content (e.g. included scripts or images) nor should it react to 303 or 302 http responses.

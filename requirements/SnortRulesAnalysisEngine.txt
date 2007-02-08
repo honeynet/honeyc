@@ -1,0 +1,10 @@
+1.1
+Snort rules analysis engine should be expanded to allow for processing of more complex rules. In particular, these enhancements are a) targeted at supporting most of bleeding edge rules and b) at allowing the creation of rules that can detect certain java script exploits (e.g. the ones that access cookies of different domain through the alert: protocol). In particular, the following should be supported:
+- matching against the entire httpResponse object
+- support for tag uri content including the nocase modifier
+- support for tag content including the nocase modifier.
+- support for tag flow
+- warning message on rules that contain tags that HoneyC doesn’t know about.
+
+1.0
+The snort rules analysis engine, a analysis engine component of honeyc, should generate snort fast alerts by matching simple snort rules against httpResponses. In this initial version, the snort rule support is limited to simple rules that are able to match with regex on httpResponse body only.

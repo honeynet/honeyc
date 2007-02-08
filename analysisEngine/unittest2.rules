@@ -1,0 +1,4 @@
+alert tcp any any <> any any (msg: "rule1 msg"; reference:url,http://ref1.rule1.com; sid:1000001; flow: to_client,established; rev:1; uricontent:"uriMatch"; nocase; content:"contentMatch"; nocase; classtype:trojan-activity; pcre:"/matchRegex/"; )
+alert tcp any any <> any any (msg: "rule2 msg"; reference:url,http://ref1.rule2.com; sid:1000002; flow: to_client,established; rev:1; content:"contentMatch"; classtype:trojan-activity; )
+alert tcp any any <> any any (msg: "rule3 msg"; reference:url,http://ref1.rule3.com; sid:1000003; flow: to_client,established; rev:1; uricontent:"uriMatch"; nocase; classtype:trojan-activity; )
+alert tcp any any <> any any (msg: "rule4 msg"; reference:url,http://ref1.rule4.com; sid:1000004; flow: to_client,established; rev:1; classtype:trojan-activity; pcre:"/matchRegex/"; )

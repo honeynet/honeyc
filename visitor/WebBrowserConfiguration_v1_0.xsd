@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="webBrowserConfiguration" type="webBrowserConfiguration"/>
+  <xs:complexType name="webBrowserConfiguration">
+   <xs:sequence>
+       <xs:element name="userAgent" type="xs:string"/>
+       <xs:element name="browserThreads" type="xs:nonNegativeInteger"/>
+       <xs:element name="urlFilter" type="xs:string"/>
+       <xs:element name="proxy" type="proxy"/>
+    </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="proxy">
+   <xs:sequence>
+       <xs:element name="server" type="xs:string"/>
+       <xs:element name="port" type="xs:nonNegativeInteger"/>
+       <xs:element name="username" type="xs:string"/>
+       <xs:element name="password" type="xs:string"/>
+    </xs:sequence>
+ </xs:complexType>
+</xs:schema>

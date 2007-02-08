@@ -1,0 +1,18 @@
+<httpResponses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="HttpResponses_v1_0.xsd">
+    <httpResponse>
+        <uri>http://www.yahoo.com/</uri>
+        <code>200</code>
+	<headers>
+	<header name="content">html</header>
+        <header name="compression">gzip</header>
+	</headers>
+	<body>some html body</body>
+    </httpResponse>
+    <httpResponse>
+        <uri>http://www.google.co.nz/index.html</uri>
+        <code>404</code>
+	<headers></headers>
+        <body>page not found</body>
+    </httpResponse>
+</httpResponses>

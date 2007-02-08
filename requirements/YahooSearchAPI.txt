@@ -1,0 +1,5 @@
+1.1.3
+The yahoo search API should allow to filter content, such as ppt, pdf, html, etc.
+
+1.0
+The yahoo search API, a queuer component within HoneyC, should allow to retrieve urls via the yahoo search API using a list of query strings. Each query string should allow to specify the number of desired results to be returned. Yahoo search API should output a xml representation of httpRequests.

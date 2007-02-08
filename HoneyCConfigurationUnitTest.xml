@@ -1,0 +1,6 @@
+<honeyCConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="HoneyCConfiguration_v1_0.xsd">
+    <queuer>ruby -s queuer/YahooSearch.rb -c=queuer/YahooSearchConfigurationUnitTest2.xml</queuer>
+    <visitor>ruby -s visitor/WebBrowser.rb -c=visitor/WebBrowserConfigurationUnitTest.xml</visitor>
+    <analysisEngine>ruby -s analysisEngine/SnortRulesAnalysisEngine.rb -c=analysisEngine/SnortRulesAnalysisEngineConfigurationUnitTest.xml</analysisEngine>
+</honeyCConfiguration>

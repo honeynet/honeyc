@@ -1,0 +1,2 @@
+1.0
+HoneyC is the aggregator of the HoneyC component. It should instantiate a queuer, visitor, and analysisEngine according to its configuration and link the command pipes accordingly, so that the information flows from the queuer to the visitor to the analysisEngine. HoneyC is platform independent and the components are code independent as long as they consume input and produce output from stdin and stdout respectively.

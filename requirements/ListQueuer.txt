@@ -1,0 +1,2 @@
+1.1.2
+The list queuer, a queuer component within HoneyC, should allow specify a list of urls that should be placed in the queue.

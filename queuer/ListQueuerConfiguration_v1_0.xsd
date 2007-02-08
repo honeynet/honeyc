@@ -1,0 +1,15 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="listQueuerConfiguration" type="listQueuerConfiguration"/>
+    <xs:complexType name="listQueuerConfiguration">
+	<xs:sequence>
+		<xs:element name="uri" maxOccurs="unbounded">
+			<xs:complexType>
+			      	<xs:simpleContent>
+					<xs:extension base = "xs:string">
+					</xs:extension>
+		    		</xs:simpleContent>
+	     		</xs:complexType>
+	   	</xs:element>
+	</xs:sequence>
+    </xs:complexType>
+</xs:schema>

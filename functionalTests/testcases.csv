@@ -1,0 +1,165 @@
+Test Case ID,Priority,Difficulty,Product,Summary,Objective,Steps,Tags,Default Owner
+2,P2,D2,HoneyC,Visit web server with web browser via proxy,Check whether web browser can interact with web servers via a proxy,"1. configure web browser to use proxy without authentication<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url<br>
+<br>
+=> check that returned httpResponse has a status of 200",functional p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+3,P2,D2,HoneyC,Visit web server with web browser via proxy with authentication,Check whether web browser can interact with web servers via a proxy,"1. configure web browser to use proxy with authentication<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url<br>
+<br>
+=> check that returned httpResponse has a status of 200",functional p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+4,P1,D3,HoneyC,Visit a valid web server with web browser directly,Check whether web browser can interact with a valid web servers,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url<br>
+<br>
+=> check that returned httpResponse has a status of 200",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+5,P1,D3,HoneyC,Attempt to visit a non existant web server with web browser directly,Check whether web browser can handles the fact that web server does not exist gracefully. Check whether future interactions with the identified non existant server are optimized.,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a url of a server that does not exist<br>
+4. enter another httpRequests object with the same server<br>
+<br>
+=> check that no error msg is output. The returned httpResponse should be listed with status of 501 - getaddrinfo and 501 - host name unknown.",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+6,P1,D3,HoneyC,Attempt to visit a valid web server (but non exist url) with web browser directly,Check whether web browser can handles the fact that content on web server does not exist gracefully,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a url of content that does not exist. Web server should exist though.<br>
+<br>
+=> check that no error msg is output. The returned httpResponse should be listed with status of 404.",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+7,P3,D3,HoneyC,Input invalid httpRequest xml to web browser,Check error handling routine of web browser when encountering invalid httpRequests,"1. configure web browser with a valid configuration<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a invalid xml httpRequests object.<br>
+<br>
+=> check error msg is displayed on the screen indicating that httpRequest string has been invalid",functional unittest p3 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+8,P1,D3,HoneyC,Visit a non-html web page with web browser directly,Check whether web browser handles mime content other than html,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that points to an image<br>
+<br>
+=> check that returned httpResponse has a status of 200.",functional p1 unittest visitor webbrowser,cseifert@mcs.vuw.ac.nz
+9,P2,D2,HoneyC,Perform adhoc concentrated testing with various valid (according to xsd) web browser configurations,Check robustness of web browser configuration parsing routine.,"1. configure web browser with various valid configurations<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url.<br>
+<br>
+=> check that no error msg is output and the returned httpResponse has a status of 200",functional ad_hoc p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+10,P2,D3,HoneyC,Perform adhoc concentrated testing with various valid (according to xsd) yahoo search api configurations,Check robustness of web browser configuration parsing routine.,"1. configure yahoo search api with various valid configurations<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check that no error msg is output and the returned httpRequests are listed according to the query specified",functional ad_hoc p2 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+11,P2,D3,HoneyC,Query yahoo search API with query that contains some special characters.,Check whether yahoo search API can handle special characters in queries,"1. configure yahoo search api with a valid configuration. The queries should contain some special characters.<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check that no error msg is output and the returned httpRequests are listed according to the query specified (check against yahoo search query made via browser)",functional p2 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+12,P1,D3,HoneyC,Query yahoo search API with valid query.,Check whether yahoo search API can make a query,"1. configure yahoo search api with a valid configuration that contains two query with one result<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check the returned httpRequests are listed according to the query specified (check against yahoo search query made via browser)",functional unittest p1 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+13,P1,D3,HoneyC,Query yahoo search API with valid query but more results than allowed,Check whether yahoo search API can make queries when results exceed the allowable limit,"1. configure yahoo search api with a valid configuration. configure results of 1002.<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check whether 1000 httpRequests are being output.",functional unittest p1 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+14,P2,D3,HoneyC,Query yahoo search API with valid queries.,Check whether yahoo search API can make queries,"1. configure yahoo search api with a valid configuration that contains two queries with one and two results respectively<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check the returned httpRequests are listed according to the query specified (check against yahoo search query made via browser)",functional p2 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+15,P1,D2,HoneyC,Instantiate honeyC with a valid configuration,Check whether honeyc instanciates the appropriate components and links the pipes accordingly.,"1. configure honeyc with a valid configuration. The components the configuration point to should consist of three simple scripts: a queuer that produces output '1', a visitor that consumes input and produces output '2' if input '1' was received, and a analysisEngine that consumes input and produces output '3' if input '2' was received.<br>
+2. start -s HoneyC.rb -c=honeyCConfigFile.xml<br>
+<br>
+=> check if '3' appears on the output",functional p1 honeyc,cseifert@mcs.vuw.ac.nz
+16,P1,D3,HoneyC,Start snort rules analysis engine with a set of valid rules,Check snort rules parsing routine with combination of valid rules.,"1. configure snort rules analysis engine to point to a set of 2 valid rules whose tags are all known, one rule whose tags are not known, and one commented out rule.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+<br>
+=> check that two rules are created by the parser",functional unittest p1 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+17,P1,D3,HoneyC,Analyze a web page whose content matches to the provided rules,Check rules analysis with rule for content matching.,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on content ""contentMatch"".<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""contentMatch"" in body<br>
+<br>
+=> check alert for the httpResponse and rule is generated.",functional unittest p1 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+18,P1,D3,HoneyC,Analyze a web page whose uri matches to the provided rules,Check rules analysis with rule for uri matching.,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on uri ""uriMatch"".<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""uriMatch"" in uri<br>
+<br>
+=> check alert for the httpResponse and rule is generated.",functional unittest p1 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+19,P1,D3,HoneyC,Analyze a web page whose content regex matches to the provided rules,Check rules analysis with rule for pcre matching.,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on pcre /matchRegex/.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""matchRegex"" in body<br>
+<br>
+=> check alert for the httpResponse and rule is generated.",functional unittest p1 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+20,P2,D3,HoneyC,Analyze a web page whose content does not match against the provided rules,Check rules analysis with rule for not matching on content,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on content ""contentMatch"".<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""something else"" in body<br>
+<br>
+=> check that no alert for the httpResponse and rule is generated.",functional unittest p2 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+21,P2,D3,HoneyC,Analyze a web page whose uri does not match against the provided rules,Check rules analysis with rule for not matching on uri,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on uri ""uriMatch"".<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""something else"" in uri<br>
+<br>
+=> check that no alert for the httpResponse and rule is generated.",functional unittest p2 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+22,P2,D3,HoneyC,Analyze a web page whose uri does not regex match against the provided rules,Check rules analysis with rule for not matching on pcre,"1. configure snort rules analysis engine to point to file that contains a rule that matches exclusively on pcre /matchRegex/.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""something else"" in body<br>
+<br>
+=> check that no alert for the httpResponse and rule is generated.",functional unittest p2 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+23,P2,D3,HoneyC,Analyze a web page whose content matches to the provided rules,"Check rules analysis with rule for content, uri, and pcre matching.","1. configure snort rules analysis engine to point to file that contains a rule that matches on content ""contentMatch"", uri ""uriMatch"" and pcre /matchRegex/.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter xml representation of httpResponses with a httpResponse that contains string ""matchRegex"" and ""uriMatch"" in uri, and ""contentMatch"" in content<br>
+<br>
+=> check alert for the httpResponse and rule is generated.",functional unittest p2 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+24,P3,D3,HoneyC,Input invalid httpResponses xml to snort rules analysis engine,Check error handling routine of snort rules analysis engine when encountering invalid httpResponses,"1. configure snort rules analysis engine to point to file that contains valid rules.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+3. enter invalid xml representation of httpResponses<br>
+<br>
+=> check error msg is displayed on the screen indicating that httpResponse string has been invalid",functional p3 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+25,P2,D3,HoneyC,Start snort rules analysis engine with bleeding edge rules,Check parsing of bleeding edge rules,"1. configure snort rules analysis engine to point to a snort bleeding edge rules.<br>
+2. start -s analysisEngine/SnortRulesAnalysisEngine.rb -c=snortRulesConfigFile.xml<br>
+<br>
+=> check that warning msgs generated don’t contain tags that should be known",load p2 analysisengine snortrulesanalysisengine,cseifert@mcs.vuw.ac.nz
+26,P2,D2,HoneyC,Run honeyC on large visitation set and snort ruleset,Check robustness of HoneyC with large content and large rule set,"1. configure honeyc with a valid configuration. The components the configuration point to should consist of the queuer yahoo search api, which is configured to retrieve 5000 urls by querying the API with at least 50 different queries, the web browser visitor, the snort rules analysis engine with a 10 rules. Include a control url and control rule.<br>
+2. start -s HoneyC.rb -c=honeyCConfigFile.xml<br>
+<br>
+=> check that no error msgs were generated and that alerts appear",load p2 honeyc,cseifert@mcs.vuw.ac.nz
+27,P1,D3,HoneyC,Visit a web server with redirect with web browser,Check whether web browser can interact with web servers that redirect,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that points to page with redirect<br>
+<br>
+=> check that returned httpResponse has a status of 200 and is the page the redirect pointed to",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+28,P2,D3,HoneyC,Visit a web server with infinite redirect with web browser,Check error handling on web browser interacting with web servers that redirect infinitely,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that points to page with an infinite redirect<br>
+<br>
+=> check that returned httpResponse has a status of 408 - too many redirects",functional unittest p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+29,P2,D3,HoneyC,Visit a valid non-follow link web server with link web browser directly,Check whether the not follow link parameter is effective,"1. configure web browser to use no proxy and not to follow links<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that contains a link<br>
+<br>
+=> check that returned only one httpResponse is returned with status 200",functional unittest p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+30,P2,D3,HoneyC,Visit a valid follow link web server with relative link web browser directly,Check whether web browser is able to follow relative links,"1. configure web browser to follow links but not to use proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that contains a relative link<br>
+<br>
+=> check that two httpResponses is returned with each status 200",functional unittest p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+31,P2,D3,HoneyC,Visit a valid follow link web server with absolute link web browser directly,Check whether web browser is able to follow absolute links,"1. configure web browser to follow links but not to use proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that contains a absolute link<br>
+<br>
+=> check that two httpResponses is returned with each status 200",functional unittest p2 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+32,P1,D3,HoneyC,Visit a valid web server with linked javascript library,"Check whether web browser can pull in src files, like pics and javascript","1. configure web browser to use no proxy and not to follow links<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a valid url that contains linked javascript file<br>
+<br>
+=> check that two httpResponse are returned with status 200. The second response should contain the content of the javascript file.",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+33,P1,D3,HoneyC,Attempt to visit a invalid web server (host name messed up) with web browser directly,Check whether invalid host names can be handled gracefully,"1. configure web browser to use no proxy<br>
+2. start -s visitor/WebBrowser -c=webBrowserConfigFile.xml<br>
+3. enter a httpRequests object with a server name that contains special characters.<br>
+<br>
+=> check that no error msg is output. The returned httpResponse should be listed with status of 500.",functional unittest p1 visitor webbrowser,cseifert@mcs.vuw.ac.nz
+34,P2,D2,HoneyC,Query yahoo search API with valid query via proxy,Check whether yahoo search API can interact vie a proxy,"1. configure yahoo search api with a proxy configuration and valid queries.<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check that no error msg is output and the returned httpRequests are listed according to the query specified (check against yahoo search query made via browser)",functional unittest p2 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+35,P2,D3,HoneyC,Query yahoo search API with valid query with filter,Check whether filter settings are being taken into consideration,"1. configure yahoo search api with a proxy configuration and valid queries with a filter of ppt.<br>
+2. start -s queuer/YahooSearchAPI.rb -c=yahooConfigFile.xml<br>
+<br>
+=> check that no error msg is output and the returned httpRequests are listed according to the query specified and only ppt requests are returned (check against yahoo search query made via browser)",functional unittest p2 queuer yahoosearchapi,cseifert@mcs.vuw.ac.nz
+36,P1,D3,HoneyC,Create list of URLs with ListQueuer,Check whether list queuer can fulfill its primary function to create a queue of urls,"1. configure list queuer with a valid configuration that contains several urls.<br>
+2. start -s queuer/ListQueuer.rb -c=listQueuerConfigFile.xml<br>
+<br>
+=> check that no error msg is output and the returned httpRequests are listed according to the urls specified",functional unittest p1 queuer listqueuer,cseifert@mcs.vuw.ac.nz

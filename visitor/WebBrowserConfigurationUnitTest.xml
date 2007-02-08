@@ -1,0 +1,6 @@
+<webBrowserConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="WebBrowserConfiguration_v1_0.xsd">
+	<userAgent>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</userAgent>
+	<browserThreads>1</browserThreads>
+	<urlFilter>gif|jpg</urlFilter>
+</webBrowserConfiguration>      

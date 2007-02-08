@@ -1,0 +1,5 @@
+some text http://www.unit.com>some more text
+some text that doesnt contain uri
+some text "http://www.unittest88.com/index.html?sometest=one%20and%20two&otherparam=2" some more text
+some uri with ip http://192.168.74.3/test/
+

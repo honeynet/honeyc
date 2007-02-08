@@ -1,0 +1,5 @@
+<httpRequests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="HttpRequests_v1_0.xsd">
+    <httpRequest>http://www.yahoo.com/</httpRequest>
+    <httpRequest>http://www.google.co.nz/index.html</httpRequest>
+</httpRequests>

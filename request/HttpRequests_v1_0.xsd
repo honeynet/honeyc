@@ -1,0 +1,8 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="httpRequests" type="httpRequests"/>
+	<xs:complexType name="httpRequests">
+	<xs:sequence>
+		<xs:element name="httpRequest" type="xs:string" maxOccurs="unbounded"/>
+	</xs:sequence>
+ </xs:complexType>
+</xs:schema>

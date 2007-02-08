@@ -1,0 +1,5 @@
+<yahooSearchConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="YahooSearchConfiguration_v1_0.xsd"
+ applicationID="_HoneyC_">
+<query results="100" format="html">presentations</query>
+</yahooSearchConfiguration>

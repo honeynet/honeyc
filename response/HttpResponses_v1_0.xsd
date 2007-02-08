@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="httpResponses" type="httpResponses"/>
+	<xs:complexType name="httpResponses">
+		<xs:sequence>
+			<xs:element name="httpResponse" type="httpResponse" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="headers">
+		<xs:sequence>
+			<xs:element name="header" maxOccurs="unbounded"/>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base = "xs:string">
+							<xs:attribute name = "name" use = "required" type = "xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="httpResponse">
+		<xs:sequence>
+			<xs:element name="uri" type="xs:string"/>
+			<xs:element name="code" type="xs:nonNegativeInteger"/>
+			<xs:element name="headers" type="headers"/>
+			<xs:element name="body" type="xs:string"/>
+		</xs:sequence>	
+	</xs:complexType>
+</xs:schema>

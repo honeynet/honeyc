@@ -1,0 +1,7 @@
+<listQueuerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="ListQueuerConfiguration_v1_0.xsd">
+	<uri>http://h18000.www1.hp.com/survey/source/smb1.js</uri>
+</listQueuerConfiguration>
+
+
+
