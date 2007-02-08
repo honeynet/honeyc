@@ -165,7 +165,7 @@ if ARGV.length==1 and ARGV[0]=="--help"
 	STDERR.puts "format: headercontent:\"name=\"key\">value<. In conjunction with this new tag a new"
 	STDERR.puts "pcre option H has been implemented to support pcres on header content."
 	STDERR.puts ""
-	STDERR.puts "Report bugs to <http://sourceforge.net/tracker/?group_id=172208&atid=860868>"
+	STDERR.puts "Report bugs to <https://bugs.honeynet.org/enter_bug.cgi?product=Honey-C>"
 elsif $c == nil
 	STDERR.puts "Usage: ruby -s analysisEngine/SnortRulesAnalysisEngine.rb "
 	STDERR.puts "            -c=[location of snort rules analysis engine configuration file]"

@@ -105,7 +105,7 @@ if ARGV.length==1 and ARGV[0]=="--help"
 	STDERR.puts "concentate on a format of value to retrieve, e.g. ppt for powerpoint presentation"
 	STDERR.puts "The query value specifies the search string to be used (see http://www.yahoo.com for syntax)."
 	STDERR.puts ""
-	STDERR.puts "Report bugs to <http://sourceforge.net/tracker/?group_id=172208&atid=860868>"
+	STDERR.puts "Report bugs to <https://bugs.honeynet.org/enter_bug.cgi?product=Honey-C>"
 elsif $c == nil
 	STDERR.puts "Usage: ruby -s queuer/YahooSearch.rb -c=[location of yahoo configuration file]"
 	STDERR.puts "Try 'ruby queuer/YahooSearch.rb --help' for more information."

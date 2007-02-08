@@ -34,7 +34,7 @@ if ARGV.length==1 and ARGV[0]=="--help"
 	STDERR.puts "Extracts a list of http links from a text file."
 	STDERR.puts "It currently extracts only http links without special characters"
 	STDERR.puts ""
-	STDERR.puts "Report bugs to <http://sourceforge.net/tracker/?group_id=172208&atid=860868>"
+	STDERR.puts "Report bugs to <https://bugs.honeynet.org/enter_bug.cgi?product=Honey-C>"
 elsif $i == nil
 	STDERR.puts "Usage: ruby -s queuer/LinkExtracter.rb -i=[location of file that contains links]"
 	STDERR.puts "Try 'ruby queuer/LinkExtracter.rb --help' for more information."
