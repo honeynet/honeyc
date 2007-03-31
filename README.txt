@@ -13,7 +13,7 @@ To invoke HoneyC with the default configuration options that were set with the d
 
 Release Notes
 -------------
-1.x.x - implemented flow_bit evaluation (feature 1629168)
+1.3.0 - implemented flow_bit evaluation (feature 1629168)
         performance optimizations
 	added functionality to snort rules permutator (additional encoding schemes, ability to replace substrings in regex and dealing with nocase content fields)
 1.2.0 - fixed bug 1621117 

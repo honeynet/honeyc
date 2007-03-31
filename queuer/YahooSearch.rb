@@ -133,8 +133,8 @@ class YahooSearchTest < Test::Unit::TestCase
 		#restore std output
 		$stdout = STDOUT 
 		
-		expected_http_request1 = HttpRequest.new("http://capture-hpc.sourceforge.net/")
-		expected_http_request2 = HttpRequest.new("http://honeyc.sourceforge.net/")
+		expected_http_request1 = HttpRequest.new("http://www.mcs.vuw.ac.nz/~cseifert/blog/index.php")
+		expected_http_request2 = HttpRequest.new("http://www.vuw.ac.nz/")
 		
 		assert_equal("<httpRequests>\n"+expected_http_request2.to_s+expected_http_request1.to_s+"</httpRequests>\n"\
 		 	,buff.string,"httpRequests not as expected.")

@@ -1,6 +1,6 @@
 <yahooSearchConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="YahooSearchConfiguration_v1_0.xsd"
  applicationID="_HoneyC_">
-	<query results="1" format="html">capture honeypot client</query>
-	<query results="1" format="all">honeyc client honeypot</query>
+	<query results="1" format="html">christian seifert blog</query>
+	<query results="1" format="all">victoria university of wellington</query>
 </yahooSearchConfiguration>

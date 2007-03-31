@@ -323,7 +323,7 @@ class WebBrowserTest < Test::Unit::TestCase
 	end
 
 	def test_build_url_new_url
-		current_url = "http://honeyc.sf.net"
+		current_url = "http://www.nz-honeynet.org"
 		link_url = "http://www.google.com/test?search=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
@@ -331,91 +331,91 @@ class WebBrowserTest < Test::Unit::TestCase
 	end
 	
 	def test_build_url_absolute
-		current_url = "http://honeyc.sf.net"
+		current_url = "http://www.nz-honeynet.org"
 		link_url = "/newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_absolute_encoded
-		current_url = "http://honeyc.sf.net"
+		current_url = "http://www.nz-honeynet.org"
 		link_url = "/newpath?test=sth%20space"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/newpath?test=sth space",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/newpath?test=sth space",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_one
-		current_url = "http://honeyc.sf.net/test/"
+		current_url = "http://www.nz-honeynet.org/test/"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 
 	def test_build_url_relative_two
-		current_url = "http://honeyc.sf.net/test"
+		current_url = "http://www.nz-honeynet.org/test"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_three
-		current_url = "http://honeyc.sf.net"
+		current_url = "http://www.nz-honeynet.org"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_four
-		current_url = "http://honeyc.sf.net/"
+		current_url = "http://www.nz-honeynet.org/"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 
 	def test_build_url_relative_five
-		current_url = "http://honeyc.sf.net/index.html"
+		current_url = "http://www.nz-honeynet.org/index.html"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_six
-		current_url = "http://honeyc.sf.net/test/index.html"
+		current_url = "http://www.nz-honeynet.org/test/index.html"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_seven
-		current_url = "http://honeyc.sf.net/test/index.html/"
+		current_url = "http://www.nz-honeynet.org/test/index.html/"
 		link_url = "./newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/index.html/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/index.html/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 
 	def test_build_url_relative_seven
-		current_url = "http://honeyc.sf.net/test/test2/index.html"
+		current_url = "http://www.nz-honeynet.org/test/test2/index.html"
 		link_url = "../../newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/test2/../../newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/test2/../../newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	def test_build_url_relative_eight
-		current_url = "http://honeyc.sf.net/test/index.html/"
+		current_url = "http://www.nz-honeynet.org/test/index.html/"
 		link_url = "newpath?test=foo"
 		
 		result_url = WebBrowser.build_url(current_url,link_url)
-		assert_equal("http://honeyc.sf.net/test/index.html/newpath?test=foo",result_url,"build url doesnt return absolute url.")
+		assert_equal("http://www.nz-honeynet.org/test/index.html/newpath?test=foo",result_url,"build url doesnt return absolute url.")
 	end
 	
 	#test non existant server
@@ -447,23 +447,19 @@ class WebBrowserTest < Test::Unit::TestCase
 	
 	def test_double_visit_same_url
 	    	input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
 			+"UnitTest.html?dummmyVar1=1&amp;dummyVar2=2</uri>\n<code>200 - OK</code>\n<header"\
-			+"s><header name=\"last-modified\">Fri, 06 Oct 2006 04:09:52 GMT</header>\n<header"\
-			+" name=\"connection\">close</header>\n<header name=\"date\">removed</header>\n<he"\
-			+"ader name=\"etag\">&quot;7c1245-de-4525d710&quot;</header>\n<header name=\"conte"\
-			+"nt-type\">text/html</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4"\
-			+".3.10</header>\n<header name=\"content-length\">222</header>\n<header name=\"x-p"\
-			+"ad\">avoid browser bug</header>\n<header name=\"accept-ranges\">bytes</header>\n"\
-			+"</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
+			+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+			+"chunked</header>\n</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
 			+"dGxlZCBEb2N1bWVudCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0Nvbn"\
 			+"RlbnQtVHlwZSZxdW90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0x"\
 			+"JnF1b3Q7Jmd0Ow0KJmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0ZXN0IH"\
@@ -484,22 +480,18 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_tc2
 #redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
 			+"UnitTest.html?dummmyVar1=1&amp;dummyVar2=2</uri>\n<code>200 - OK</code>\n<header"\
-			+"s><header name=\"last-modified\">Fri, 06 Oct 2006 04:09:52 GMT</header>\n<header"\
-			+" name=\"connection\">close</header>\n<header name=\"date\">removed</header>\n<he"\
-			+"ader name=\"etag\">&quot;7c1245-de-4525d710&quot;</header>\n<header name=\"conte"\
-			+"nt-type\">text/html</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4"\
-			+".3.10</header>\n<header name=\"content-length\">222</header>\n<header name=\"x-p"\
-			+"ad\">avoid browser bug</header>\n<header name=\"accept-ranges\">bytes</header>\n"\
-			+"</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
+			+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+			+"chunked</header>\n</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
 			+"dGxlZCBEb2N1bWVudCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0Nvbn"\
 			+"RlbnQtVHlwZSZxdW90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0x"\
 			+"JnF1b3Q7Jmd0Ow0KJmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0ZXN0IH"\
@@ -518,21 +510,18 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_relative_src_tc32
 #redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTestRelativeSrc.html</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTestRelativeSrc.html</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
-			+"UnitTestRelativeSrc.html</uri>\n<code>200 - OK</code>\n<headers><header name=\"l"\
-			+"ast-modified\">Thu, 19 Oct 2006 01:23:04 GMT</header>\n<header name=\"connection"\
-			+"\">close</header>\n<header name=\"date\">removed</header>\n<header name=\"etag\""\
-			+">&quot;7c1225-11b-4536d378&quot;</header>\n<header name=\"content-type\">text/ht"\
-			+"ml</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4.3.10</header>\n<"\
-			+"header name=\"content-length\">283</header>\n<header name=\"x-pad\">avoid browse"\
-			+"r bug</header>\n<header name=\"accept-ranges\">bytes</header>\n</headers>\n<body"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
+			+"UnitTestRelativeSrc.html</uri>\n<code>200 - OK</code>\n<header"\
+			+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+			+"chunked</header>\n</headers>\n<body"\
 			+">Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\ndGxlZCBEb2N1bWVud"\
 			+"CZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0NvbnRlbnQtVHlwZSZxdW9"\
 			+"0OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0xJnF1b3Q7Jmd0Ow0KJ"\
@@ -540,13 +529,13 @@ class WebBrowserTest < Test::Unit::TestCase
 			+"SB3ZWIgYnJvd3NlciB1bml0IHRlc3Qgd2l0aCBhIHJlbGF0aXZl\nIHNyYyB0byBhIGphdmFzY3JpcHQ"\
 			+"gZmlsZS4NCiZsdDsvYm9keSZndDsNCiZs\ndDsvaHRtbCZndDsNCiZsdDtzY3JpcHQgc3JjPSZxdW90O"\
 			+"3Rlc3RTY3JpcHQu\nanMmcXVvdDsvJmd0Ow==\n</body>\n</httpResponse>\n<httpResponse>\n"\
-			+"<uri>http://honeyc.sourceforge.net/testScript.js</uri>\n<code>200 - OK</code>\n"\
-			+"<headers><header name=\"last-modified\">Thu, 19 Oct 2006 01:23:03 GMT</header>\n"\
-			+"<header name=\"connection\">close</header>\n<header name=\"date\">removed</heade"\
-			+"r>\n<header name=\"etag\">&quot;7c046b-f-4536d377&quot;</header>\n<header name=\""\
-			+"content-type\">application/x-javascript</header>\n<header name=\"server\">Apach"\
-			+"e/1.3.33 (Unix) PHP/4.3.10</header>\n<header name=\"content-length\">15</header>"\
-			+"\n<header name=\"accept-ranges\">bytes</header>\n</headers>\n<body>YWxlcnQoJnF1b"\
+			+"<uri>http://www.nz-honeynet.org/testScript.js</uri>\n<code>200 - OK</code>\n"\
+			+"<headers><header name=\"last-modified\">Sat, 31 Mar 2007 10:02:11 GMT</header>\n"\
+			+ "<header name=\"date\">removed</header>\n<header name=\"etag\""\
+			+ ">&quot;9e0cca-f-460e31a3&quot;</header>\n<header name=\"content-type\">applicati"\
+			+ "on/x-javascript</header>\n<header name=\"server\">Apache</header>\n<header name="\
+			+ "\"content-length\">15</header>\n<header name=\"accept-ranges\">bytes</header>\n<"\
+			+ "/headers>\n<body>YWxlcnQoJnF1b"\
 			+"3Q7aGVsbG8mcXVvdDspOw==\n</body>\n</httpResponse>\n</httpResponses>\n"
 		
 		webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml") #follow link is set to false
@@ -562,7 +551,7 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_empty_request_path
 #redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
@@ -584,22 +573,19 @@ class WebBrowserTest < Test::Unit::TestCase
 	#def test_visit_via_proxy_with_auth_tc3
 	#	#redirect input
 	#	input = StringIO.new("<httpRequests>\n"\
-	#		+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
+	#		+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
 	#		+ "</httpRequests>\n") 
 	#	$stdin = input
 	#
 	#	#redirect output
 	#	actual_http_response = StringIO.new
 	#	$stdout = actual_http_response
-	#	expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
+	#	expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
 	#		+"UnitTest.html?dummmyVar1=1&amp;dummyVar2=2</uri>\n<code>200 - OK</code>\n"\
-	#		+"<headers><header name=\"last-modified\">Fri, 06 Oct 2006 04:09:52 GMT</header>\n<header"\
-	#		+" name=\"connection\">close</header>\n<header name=\"date\">removed</header>\n<he"\
-	#		+"ader name=\"etag\">&quot;7c1245-de-4525d710&quot;</header>\n<header name=\"conte"\
-	#		+"nt-type\">text/html</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4"\
-	#		+".3.10</header>\n<header name=\"content-length\">222</header>\n<header name=\"x-p"\
-	#		+"ad\">avoid browser bug</header>\n<header name=\"accept-ranges\">bytes</header>\n"\
-	#		+"</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
+	#		+"<header"\
+	#		+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+#			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+#			+"chunked</header>\n</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
 	#		+"dGxlZCBEb2N1bWVudCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0Nvbn"\
 	#		+"RlbnQtVHlwZSZxdW90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0x"\
 	#		+"JnF1b3Q7Jmd0Ow0KJmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0ZXN0IH"\
@@ -619,22 +605,19 @@ class WebBrowserTest < Test::Unit::TestCase
 	#def test_visit_via_proxy_without_auth_tc4
 	#	#redirect input
 	#	input = StringIO.new("<httpRequests>\n"\
-	#		+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
+	#		+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTest.html?dummmyVar1=1&amp;dummyVar2=2</httpRequest>\n"\
 	#		+ "</httpRequests>\n") 
 	#	$stdin = input
 	#
 	#	#redirect output
 	#	actual_http_response = StringIO.new
 	#	$stdout = actual_http_response
-	#	expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
+	#	expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
 	#		+"UnitTest.html?dummmyVar1=1&amp;dummyVar2=2</uri>\n<code>200 - OK</code>\n"\
-	#		+"<headers><header name=\"last-modified\">Fri, 06 Oct 2006 04:09:52 GMT</header>\n<header"\
-	#		+" name=\"connection\">close</header>\n<header name=\"date\">removed</header>\n<he"\
-	#		+"ader name=\"etag\">&quot;7c1245-de-4525d710&quot;</header>\n<header name=\"conte"\
-	#		+"nt-type\">text/html</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4"\
-	#		+".3.10</header>\n<header name=\"content-length\">222</header>\n<header name=\"x-p"\
-	#		+"ad\">avoid browser bug</header>\n<header name=\"accept-ranges\">bytes</header>\n"\
-	#		+"</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
+	#		+"<header"\
+	#		+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+#			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+#			+"chunked</header>\n</headers>\n<body>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\n"\
 	#		+"dGxlZCBEb2N1bWVudCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0Nvbn"\
 	#		+"RlbnQtVHlwZSZxdW90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0x"\
 	#		+"JnF1b3Q7Jmd0Ow0KJmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0ZXN0IH"\
@@ -652,29 +635,27 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_dont_follow_link_tc29
 		#redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserUnitTestAbsoluteLink.html</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserUnitTestAbsoluteLink.html</httpRequest>\n"\
 			+ "</httpRequests>\n") #page contains link, but we configure webbrowser to ignore links
 		$stdin = input
 	
+		
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
-			+"UnitTestAbsoluteLink.html</uri>\n<code>200 - OK</code>\n<headers><header name=\""\
-			+"last-modified\">Fri, 06 Oct 2006 04:09:53 GMT</header>\n<header name=\"connectio"\
-			+"n\">close</header>\n<header name=\"date\">removed</header>\n<header name=\"etag\""\
-			+">&quot;7c054b-13f-4525d711&quot;</header>\n<header name=\"content-type\">text/h"\
-			+"tml</header>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4.3.10</header>\n"\
-			+"<header name=\"content-length\">319</header>\n<header name=\"x-pad\">avoid brows"\
-			+"er bug</header>\n<header name=\"accept-ranges\">bytes</header>\n</headers>\n<bod"\
-			+"y>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\ndGxlZCBEb2N1bWVu"\
-			+"dCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0NvbnRlbnQtVHlwZSZxdW"\
-			+"90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0xJnF1b3Q7Jmd0Ow0K"\
-			+"Jmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0ZXN0IHBhZ2Ug\nZm9yIHRo"\
-			+"ZSB3ZWIgYnJvd3NlciB1bml0IHRlc3Qgd2l0aCBhIGFic29sdXRl\nIGxpbmsgdG8gJmx0O2EgaHJlZj"\
-			+"0mcXVvdDtodHRwOi8vaG9uZXljLnNvdXJj\nZWZvcmdlLm5ldC93ZWJCcm93c2VyVW5pdFRlc3QuaHRt"\
-			+"bCZxdW90OyZndDth\nbm90aGVyIHBhZ2UuICZsdDsvYSZndDsNCiZsdDsvYm9keSZndDsNCiZsdDsv\n"\
-			+"aHRtbCZndDsNCg==\n</body>\n</httpResponse>\n</httpResponses>\n"
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
+			+"UnitTestAbsoluteLink.html</uri>\n<code>200 - OK</code>\n<header"\
+			+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+			+"chunked</header>\n</headers>\n<bod"\
+			+"y>Jmx0O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtV"\
+			+"bnRp\ndGxlZCBEb2N1bWVudCZsdDsvdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90"\
+			+"O0NvbnRlbnQtVHlwZSZxdW90OyBjb250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tOD"\
+			+"g1OS0xJnF1b3Q7Jmd0Ow0KJmx0Oy9o\nZWFkJmd0Ow0KDQombHQ7Ym9keSZndDsNClRoaXMgaXMgYSB0"\
+			+"ZXN0IHBhZ2Ug\nZm9yIHRoZSB3ZWIgYnJvd3NlciB1bml0IHRlc3Qgd2l0aCBhIGFic29sdXRl\nIGxp"\
+			+"bmsgdG8gJmx0O2EgaHJlZj0mcXVvdDtodHRwOi8vd3d3Lm56LWhvbmV5\nbmV0Lm9yZy93ZWJCcm93c2"\
+			+"VyVW5pdFRlc3QuaHRtbCZxdW90OyZndDthbm90\naGVyIHBhZ2UuICZsdDsvYSZndDsNCiZsdDsvYm9k"\
+			+"eSZndDsNCiZsdDsvaHRt\nbCZndDsNCg==\n</body>\n</httpResponse>\n</httpResponses>\n"
 		
 		webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml")
 		$stdout = STDOUT
@@ -713,7 +694,7 @@ class WebBrowserTest < Test::Unit::TestCase
 		#redirect input
 
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/idontexist.html</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/idontexist.html</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 		
@@ -721,7 +702,7 @@ class WebBrowserTest < Test::Unit::TestCase
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
 		
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/idontexist.html</uri>\n"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/idontexist.html</uri>\n"\
 			+ "<code>404 - Not Found</code>\n"
 		
 		webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml")
@@ -731,30 +712,12 @@ class WebBrowserTest < Test::Unit::TestCase
 			"http response not as expected")
 	
 	end
-
-	#handling of invalid httpRequest
-#	def test_handling_invalid_httprequest_tc7
-#		#redirect input
-#		input = StringIO.new("<httpRequestseyc.sourceforge.net/idontexist.html</httpRequest>\n"\
-#			+ "</httpRequests>\n") 
-#		$stdin = input
-#
-#		#redirect output
-#		actual_http_response = StringIO.new
-#
-#		begin
-#			webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml")
-#			assert(false, "NO argument error was raised on invalud httpRequest")
-#		rescue ArgumentError
-#			#what we want
-#		end
-#	end
 	
 	#test non existant server
 	def test_visit_image_tc9
 		#redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/images/head-banner.jpg</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/banner.gif</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
@@ -762,7 +725,7 @@ class WebBrowserTest < Test::Unit::TestCase
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
 		
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/images/head-banner.jpg</uri>\n"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/banner.gif</uri>\n"\
 			+ "<code>200 - OK</code>\n<headers>"
 		
 		webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml")
@@ -775,21 +738,18 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_redirect_tc27
 		#redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserRedirectUnitTest.php</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserRedirectUnitTest.php</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
-			+"RedirectUnitTest.php</uri>\n<code>200 - OK</code>\n<headers><header name=\"last-"\
-			+"modified\">Fri, 06 Oct 2006 04:09:52 GMT</header>\n<header name=\"connection\">c"\
-			+"lose</header>\n<header name=\"date\">removed</header>\n<header name=\"etag\">&qu"\
-			+"ot;7c1245-de-4525d710&quot;</header>\n<header name=\"content-type\">text/html</h"\
-			+"eader>\n<header name=\"server\">Apache/1.3.33 (Unix) PHP/4.3.10</header>\n<heade"\
-			+"r name=\"content-length\">222</header>\n<header name=\"x-pad\">avoid browser bug"\
-			+"</header>\n<header name=\"accept-ranges\">bytes</header>\n</headers>\n<body>Jmx0"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
+			+"RedirectUnitTest.php</uri>\n<code>200 - OK</code>\n<header"\
+			+"s><header name=\"date\">removed</header>\n<header name=\"content-type\">text/html"\
+			+ "</header>\n<header name=\"server\">Apache</header>\n<header name=\"transfer-encoding\">"\
+			+"chunked</header>\n</headers>\n<body>Jmx0"\
 			+"O2h0bWwmZ3Q7DQombHQ7aGVhZCZndDsNCiZsdDt0aXRsZSZndDtVbnRp\ndGxlZCBEb2N1bWVudCZsdD"\
 			+"svdGl0bGUmZ3Q7DQombHQ7bWV0YSBodHRwLWVx\ndWl2PSZxdW90O0NvbnRlbnQtVHlwZSZxdW90OyBj"\
 			+"b250ZW50PSZxdW90O3Rl\neHQvaHRtbDsgY2hhcnNldD1pc28tODg1OS0xJnF1b3Q7Jmd0Ow0KJmx0Oy"\
@@ -810,14 +770,14 @@ class WebBrowserTest < Test::Unit::TestCase
 	def test_visit_too_many_redirect_tc28
 		#redirect input
 		input = StringIO.new("<httpRequests>\n"\
-			+ "<httpRequest>http://honeyc.sourceforge.net/webBrowserTooManyRedirectUnitTest.php</httpRequest>\n"\
+			+ "<httpRequest>http://www.nz-honeynet.org/webBrowserTooManyRedirectUnitTest.php</httpRequest>\n"\
 			+ "</httpRequests>\n") 
 		$stdin = input
 
 		#redirect output
 		actual_http_response = StringIO.new
 		$stdout = actual_http_response
-		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://honeyc.sourceforge.net/webBrowser"\
+		expected_http_response = "<httpResponses>\n<httpResponse>\n<uri>http://www.nz-honeynet.org/webBrowser"\
 			+"TooManyRedirectUnitTest.php</uri>\n<code>302 - Too many redirects.</code>\n<headers></headers>\n<body></body>\n</httpResponse>\n</httpResponses>\n"
 		
 		webBrowser = WebBrowser.new("visitor/WebBrowserConfigurationUnitTestDontFollow.xml")
